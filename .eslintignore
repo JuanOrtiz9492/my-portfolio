@@ -1,3 +1,4 @@
 build
 coverage
 src/reportWebVitals.js
+node_modules
