@@ -1,6 +1,7 @@
 {
-	"name": "portfolio",
+	"name": "my-portfolio",
 	"version": "0.1.0",
+	"homepage": "juanortiz9492.github.io/my-portfolio/",
 	"private": false,
 	"jest": {
 		"collectCoverageFrom": [
@@ -33,7 +34,9 @@
 		"pretty": "prettier --write ./src",
 		"postinstall": "husky install",
 		"prepack": "pinst --disable",
-		"postpack": "pinst --enable"
+		"postpack": "pinst --enable",
+		"predeploy": "react-scripts build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -62,6 +65,7 @@
 		"eslint-plugin-prettier": "^4.0.0",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
+		"gh-pages": "^3.2.3",
 		"husky": "^7.0.4",
 		"lint-staged": "^12.3.4",
 		"prettier": "^2.5.1"
