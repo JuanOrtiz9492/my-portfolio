@@ -26,7 +26,7 @@ function Modal({
 			<Styled.Container>
 				<Styled.ModalContainer>
 					<Styled.ModalHeader>
-						<p>{title}</p>
+						<h2>{title}</h2>
 						<Styled.ExitBtn onClick={closeModal} />
 					</Styled.ModalHeader>
 					{body}

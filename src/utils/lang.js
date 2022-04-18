@@ -3,7 +3,7 @@ const lang = {
 		about: {
 			title: 'Web Developer',
 			description:
-				'a web developer with 5 years of expercience working with north america clients, projects runing on React',
+				'a web developer with 5 years of expercience working with north america clients, projects built on React',
 		},
 	},
 };

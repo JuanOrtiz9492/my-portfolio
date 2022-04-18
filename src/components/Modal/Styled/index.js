@@ -12,35 +12,40 @@ const Container = styled.div`
 `;
 
 const ModalContainer = styled.div`
+	position: relative;
 	align-self: center;
 	margin: 0 auto;
 	width: 50vh;
 	height: 50vh;
 	background-color: #fff;
+	border-radius: 3%;
 `;
 
 const ExitBtn = styled.button`
-	width: 20px;
-	height: 20px;
+	top: 6%;
+	right: 2%;
+	transform: translate(-50%, -50%);
+	width: 18px;
+	height: 18px;
 	background-color: transparent;
 	border: none;
-	position: relative;
+	position: absolute;
 	&:hover {
 		cursor: pointer;
 	}
 	&::after {
 		content: '';
 		left: 0;
-		border-top: solid 5px #666;
-		width: 20px;
+		border-top: solid 4px #666;
+		width: 18px;
 		position: absolute;
 		transform: rotate(45deg);
 	}
 	&::before {
 		content: '';
 		left: 0;
-		border-bottom: solid 5px #666;
-		width: 20px;
+		border-bottom: solid 4px #666;
+		width: 18px;
 		position: absolute;
 		transform: rotate(-45deg);
 	}
@@ -48,11 +53,17 @@ const ExitBtn = styled.button`
 
 const ModalHeader = styled.div`
 	width: 100%;
-	display: grid;
-	grid-template-columns: 10fr 1fr;
+	& h2 {
+		text-align: center;
+		text-transform: uppercase;
+	}
 `;
 
 const ModalFooter = styled.div`
+	width: 70%;
+	left: 15%;
+	position: absolute;
+	bottom: 5%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
