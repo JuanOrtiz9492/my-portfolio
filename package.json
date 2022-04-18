@@ -1,7 +1,7 @@
 {
 	"name": "my-portfolio",
 	"version": "0.1.0",
-	"homepage": "https://juanortiz9492.github.io/my-portfolio/",
+	"homepage": ".",
 	"private": false,
 	"jest": {
 		"collectCoverageFrom": [

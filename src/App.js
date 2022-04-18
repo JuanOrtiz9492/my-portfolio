@@ -1,16 +1,14 @@
-import React, { useRef } from 'react';
-import Button from '@mui/material/Button';
+import React, { useRef, useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import About from './components/About/About';
 import Grid from './components/Grid';
+import Modal from './components/Modal';
 
 function Copyright() {
 	return (
@@ -35,6 +33,17 @@ export default function Main() {
 		console.log(target.name);
 		sections[target.name]();
 	};
+	const [openModal, setOpenModal] = useState(false);
+
+	const handleModal = () => {
+		console.log('oppen modal');
+		setOpenModal(true);
+	};
+
+	const closeModal = () => {
+		setOpenModal(false);
+	};
+
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
@@ -48,37 +57,9 @@ export default function Main() {
 						pb: 6,
 					}}
 				>
-					<About ref={aboutRef} />
-					<Container maxWidth="sm">
-						<Typography
-							component="h1"
-							variant="h2"
-							align="center"
-							color="text.primary"
-							gutterBottom
-						>
-							Album layout
-						</Typography>
-						<Typography
-							variant="h5"
-							align="center"
-							color="text.secondary"
-							paragraph
-						>
-							Something short and leading about the collection below—its
-							contents, the creator, etc. Make it short and sweet, but not too
-							short so folks don&apos;t simply skip over it entirely.
-						</Typography>
-						<Stack
-							sx={{ pt: 4 }}
-							direction="row"
-							spacing={2}
-							justifyContent="center"
-						>
-							<Button variant="contained">Main call to action</Button>
-							<Button variant="outlined">Secondary action</Button>
-						</Stack>
-					</Container>
+					<section ref={aboutRef}>
+						<About />
+					</section>
 				</Box>
 				<Grid />
 			</main>
@@ -96,6 +77,16 @@ export default function Main() {
 					Something here to give the footer a purpose!
 				</Typography>
 				<Copyright />
+				<button type="button" onClick={() => handleModal()}>
+					open modal
+				</button>
+				<Modal
+					openModal={openModal}
+					title="Hello modal"
+					handleClose={closeModal}
+					mainAction={() => {}}
+					secondaryAction={() => {}}
+				/>
 			</Box>
 			{/* End footer */}
 		</ThemeProvider>

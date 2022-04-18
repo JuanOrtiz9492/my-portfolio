@@ -1,15 +1,25 @@
 import React from 'react';
 import { Container, Typography } from '@mui/material';
 
+import lang from '../../utils/lang';
+
+const {
+	en: { about },
+} = lang;
 function About() {
 	return (
-		<Container maxWidth="xl" disableGutters>
+		<Container maxWidth="sm">
 			<Typography
-				variant="string"
+				component="h1"
+				variant="h2"
 				align="center"
-				sx={{ margin: '0 auto', display: 'block' }}
+				color="text.primary"
+				gutterBottom
 			>
-				Hello this is me
+				{about.title}
+			</Typography>
+			<Typography variant="h5" align="center" color="text.secondary" paragraph>
+				{about.description}
 			</Typography>
 		</Container>
 	);
