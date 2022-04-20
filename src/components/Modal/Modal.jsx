@@ -6,8 +6,10 @@ import * as Styled from './Styled';
 function Modal({
 	title,
 	body,
-	mainAction,
+	primaryAction,
+	primaryLabel,
 	secondaryAction,
+	secondaryLabel,
 	openModal,
 	handleClose,
 }) {
@@ -21,6 +23,15 @@ function Modal({
 		handleClose();
 	};
 
+	const handlePrimaryButton = () => {
+		primaryAction();
+		closeModal();
+	};
+
+	const handleSecondButton = () => {
+		secondaryAction();
+		closeModal();
+	};
 	return (
 		modalVisibility && (
 			<Styled.Container>
@@ -29,10 +40,26 @@ function Modal({
 						<h2>{title}</h2>
 						<Styled.ExitBtn onClick={closeModal} />
 					</Styled.ModalHeader>
-					{body}
+					<Styled.BodyContainer>{body}</Styled.BodyContainer>
 					<Styled.ModalFooter>
-						{mainAction && <Button>ok</Button>}
-						{secondaryAction && <Button>cancel</Button>}
+						{primaryAction && (
+							<Button
+								onClick={handlePrimaryButton}
+								color="primary"
+								variant="contained"
+							>
+								{primaryLabel}
+							</Button>
+						)}
+						{secondaryAction && (
+							<Button
+								onClick={handleSecondButton}
+								color="primary"
+								variant="contained"
+							>
+								{secondaryLabel}
+							</Button>
+						)}
 					</Styled.ModalFooter>
 				</Styled.ModalContainer>
 			</Styled.Container>
@@ -40,18 +67,23 @@ function Modal({
 	);
 }
 
+/* eslint-disable consistent-return */
 Modal.propTypes = {
 	title: PropTypes.string.isRequired,
 	body: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-	mainAction: PropTypes.func,
+	primaryAction: PropTypes.func,
+	primaryLabel: PropTypes.string,
 	secondaryAction: PropTypes.func,
+	secondaryLabel: PropTypes.string,
 	openModal: PropTypes.bool.isRequired,
 	handleClose: PropTypes.func.isRequired,
 };
 
 Modal.defaultProps = {
-	mainAction: undefined,
+	primaryAction: undefined,
+	primaryLabel: '',
 	secondaryAction: undefined,
+	secondaryLabel: '',
 };
 
 export default Modal;

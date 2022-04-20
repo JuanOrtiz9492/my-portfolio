@@ -15,10 +15,14 @@ const ModalContainer = styled.div`
 	position: relative;
 	align-self: center;
 	margin: 0 auto;
-	width: 50vh;
-	height: 50vh;
+	min-width: 50vh;
+	min-height: 60vh;
 	background-color: #fff;
 	border-radius: 3%;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 1em 2em;
 `;
 
 const ExitBtn = styled.button`
@@ -56,17 +60,29 @@ const ModalHeader = styled.div`
 	& h2 {
 		text-align: center;
 		text-transform: uppercase;
+		color: #444;
 	}
 `;
 
 const ModalFooter = styled.div`
 	width: 70%;
-	left: 15%;
-	position: absolute;
-	bottom: 5%;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 `;
 
-export { Container, ModalContainer, ExitBtn, ModalHeader, ModalFooter };
+const BodyContainer = styled.div`
+	width: 85%;
+	height: min-content;
+	margin: 3em auto;
+`;
+
+export {
+	Container,
+	ModalContainer,
+	ExitBtn,
+	ModalHeader,
+	ModalFooter,
+	BodyContainer,
+};
