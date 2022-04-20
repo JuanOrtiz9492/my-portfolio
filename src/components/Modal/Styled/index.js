@@ -18,7 +18,7 @@ const ModalContainer = styled.div`
 	min-width: 50vh;
 	min-height: 60vh;
 	background-color: #fff;
-	border-radius: 3%;
+	border-radius: 2em;
 	display: flex;
 	flex-direction: column;
 	box-sizing: border-box;
