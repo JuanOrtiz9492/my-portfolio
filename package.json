@@ -36,7 +36,9 @@
 		"prepack": "pinst --disable",
 		"postpack": "pinst --enable",
 		"predeploy": "react-scripts build",
-		"deploy": "gh-pages -d build"
+		"deploy": "gh-pages -d build",
+		"preserve": "react-scripts build",
+		"serve": "node server.js"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -65,6 +67,7 @@
 		"eslint-plugin-prettier": "^4.0.0",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
+		"express": "^4.18.2",
 		"gh-pages": "^3.2.3",
 		"husky": "^7.0.4",
 		"lint-staged": "^12.3.4",
