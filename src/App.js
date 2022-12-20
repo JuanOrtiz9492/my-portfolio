@@ -1,35 +1,34 @@
 import React, { useRef } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { LinkedIn, GitHub } from '@mui/icons-material';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import About from './components/About/About';
-import Grid from './components/Grid';
-
-function Copyright() {
-	return (
-		<Typography variant="body2" color="text.secondary" align="center">
-			{'Copyright © '}
-			<Link color="inherit" href="https://mui.com/">
-				Your Website
-			</Link>
-			{new Date().getFullYear()}
-		</Typography>
-	);
-}
+import ProjectsGrid from './components/Grid';
 
 const theme = createTheme();
 
 export default function Main() {
 	const aboutRef = useRef(null);
-	const onButtonClick = ({ target }) => {
+	const projectsRef = useRef(null);
+	const onButtonClick = (section) => {
 		const sections = {
-			about: () => aboutRef.current.scrollIntoView(),
+			about: () =>
+				aboutRef.current.scrollIntoView({
+					block: 'center',
+					behavior: 'smooth',
+				}),
+			projects: () =>
+				projectsRef.current.scrollIntoView({
+					block: 'center',
+					behavior: 'smooth',
+				}),
+			contactme: () => {},
 		};
-		sections[target.name]();
+		sections[section]();
 	};
 
 	return (
@@ -49,22 +48,35 @@ export default function Main() {
 						<About />
 					</section>
 				</Box>
-				<Grid />
+				<div ref={projectsRef}>
+					<ProjectsGrid />
+				</div>
 			</main>
 			{/* Footer */}
-			<Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-				<Typography variant="h6" align="center" gutterBottom>
-					Footer
-				</Typography>
-				<Typography
-					variant="subtitle1"
-					align="center"
-					color="text.secondary"
-					component="p"
+			<Box
+				sx={{
+					bgcolor: '#1565c0',
+					p: 4,
+					display: 'flex',
+					flexDirection: 'row',
+					justifyContent: 'center',
+				}}
+				component="footer"
+			>
+				<Link
+					sx={{ margin: '0 10px' }}
+					href="https://co.linkedin.com/in/ingortizh"
+					color="#ffffff"
 				>
-					Something here to give the footer a purpose!
-				</Typography>
-				<Copyright />
+					<LinkedIn />
+				</Link>
+				<Link
+					sx={{ margin: '0 10px' }}
+					href="https://github.com/JuanOrtiz9492"
+					color="#ffffff"
+				>
+					<GitHub />
+				</Link>
 			</Box>
 			{/* End footer */}
 		</ThemeProvider>

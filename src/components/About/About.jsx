@@ -8,17 +8,17 @@ const {
 } = lang;
 function About() {
 	return (
-		<Container maxWidth="sm">
+		<Container maxWidth="md">
 			<Typography
 				component="h1"
 				variant="h2"
-				align="center"
+				align="justify"
 				color="text.primary"
 				gutterBottom
 			>
 				{about.title}
 			</Typography>
-			<Typography variant="h5" align="center" color="text.secondary" paragraph>
+			<Typography variant="h5" align="justify" color="text.secondary" paragraph>
 				{about.description}
 			</Typography>
 		</Container>

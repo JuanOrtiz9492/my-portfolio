@@ -35,7 +35,18 @@ const cards = [
 		isVisitable: true,
 		url: 'https://www.hme.com/qsr/zoom-nitro/',
 	},
+	{
+		id: 4,
+		projectName: 'Snake Game',
+		sumary: 'Snake Game',
+		img: './snake-game.jpg',
+		description: `This project is a implementation of the classic game Snake, was built with P5.js a library, for graphics, the goal of this game, was to try and implement some Design Patterns`,
+		isVisitable: true,
+		url: 'http://juanortizdev.com/snakegame',
+	},
 ];
-const dummy = 'dummy';
 
-export { cards, dummy };
+const waLink =
+	'https://api.whatsapp.com/send?phone=573133200890&text=Hi%20Juan%2C%0AI%20came%20across%20your%20portfolio%20and%20I%20wanted%20to%20let%20you%20know%20about%20a%20fantastic%20job%20opportunity%20that%20I%20think%20you%20might%20be%20interested%20in.';
+
+export { cards, waLink };
