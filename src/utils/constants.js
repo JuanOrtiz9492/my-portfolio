@@ -37,6 +37,18 @@ const cards = [
 	},
 	{
 		id: 4,
+		projectName: 'Potterverse HUB',
+		sumary: 'Harry Potter fan page',
+		img: './hp-app.jpg',
+		description: `Tech Stack: Next.js, Tailwind CSS, Docker, Node.js.
+
+		This is a fan app with data about the Harry Potter world. The API is served with Node.js and containerized with Docker. The API can be consumed at http://juanortizdev.com/harry-potter-api.
+		`,
+		isVisitable: true,
+		url: 'http://juanortizdev.com/harry-potter-app',
+	},
+	{
+		id: 5,
 		projectName: 'Snake Game',
 		sumary: 'Snake Game',
 		img: './snake-game.jpg',
